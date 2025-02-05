@@ -14,5 +14,6 @@ class Profile extends Component
             'phone' => '123-456-7890',
         ];
         return view('livewire.profile', ['data' => $data]);
+        // return view('livewire.profile');
     }
 }

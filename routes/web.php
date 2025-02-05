@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Livewire\CreatePost;
+use App\Livewire\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,7 @@ Route::get('/posts', CreatePost::class)->name('posts.index');
 Route::get('/posts/create', CreatePost::class);
 
 Route::view('search', 'usersearch');
+
+// profile route
+
+// Route::view('/profile', 'profile');
