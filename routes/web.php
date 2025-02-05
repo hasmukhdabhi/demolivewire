@@ -25,3 +25,5 @@ Route::get('/counter', Counter::class);
 // Route::get('/posts', CreatePost::class);
 Route::get('/posts', CreatePost::class)->name('posts.index');
 Route::get('/posts/create', CreatePost::class);
+
+Route::view('search', 'usersearch');
