@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
+use App\Livewire\CreatePost;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::get('/', function () {
 // livewire component route
 
 Route::get('/counter', Counter::class);
+// Route::get('/posts', CreatePost::class);
+Route::get('/posts', CreatePost::class)->name('posts.index');
+Route::get('/posts/create', CreatePost::class);
