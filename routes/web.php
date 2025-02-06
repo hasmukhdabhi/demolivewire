@@ -28,6 +28,7 @@ Route::get('/posts', CreatePost::class)->name('posts.index');
 Route::get('/posts/create', CreatePost::class);
 
 Route::view('search', 'usersearch');
+Route::view('user', 'user');
 
 // profile route
 
