@@ -7,10 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Share Tutorial </title>
     @livewireStyles
+    <style>
+        h5 {
+            color: orange;
+            background-color: rgb(150, 120, 178);
+        }
+    </style>
 </head>
 
 <body>
-    <livewire:profile />
+    @livewire('users')
+    {{-- <livewire:profile /> --}}
     {{-- <livewire:search /> --}}
     @livewireScripts
 </body>
