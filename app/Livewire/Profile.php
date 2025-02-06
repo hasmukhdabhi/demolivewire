@@ -7,7 +7,7 @@ use Livewire\Component;
 class Profile extends Component
 {
     // life cycle hooks
-    public $name = "Inital value";
+    public $name = "inital value";
     public $counter;
     function mount()
     {
@@ -21,7 +21,7 @@ class Profile extends Component
     function updateName($name)
     {
 
-        $this->name = $name;
+        $this->name=$name;
     }
     public function render()
     {

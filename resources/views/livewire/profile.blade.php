@@ -6,8 +6,8 @@
 
     {{--  life cycle hooks --}}
     <h1>Profile Component</h1>
-    {{$name}}
-    <h3>{{$counter}}</h3>
-    <input type="text" wire:model="name"/>
+    {{ $name }}
+    <h3>{{ $counter }}</h3>
+    <input type="text" wire:model="name" />
     <button wire:click="updateName('John Doe')">Update Name</button>
 </div>
