@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Livewire\CreatePost;
 use App\Livewire\Profile;
+use App\Livewire\ProductSave;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,8 @@ Route::get('/posts/create', CreatePost::class);
 Route::view('search', 'usersearch');
 Route::view('user', 'user');
 
-Route::view('product', 'livewire.product-save');
+// Route::view('product', 'livewire.product-save');
+Route::get('/add-product', ProductSave::class);
 
 // profile route
 
