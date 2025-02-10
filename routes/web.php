@@ -30,6 +30,8 @@ Route::get('/posts/create', CreatePost::class);
 Route::view('search', 'usersearch');
 Route::view('user', 'user');
 
+Route::view('product', 'livewire.product-save');
+
 // profile route
 
 // Route::view('/profile', 'profile');
