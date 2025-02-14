@@ -1,37 +1,39 @@
-<div>
+@extends('layouts.app')
+
+@section('content')
     <h1> Product Management</h1>
+
     @if (session()->has('status'))
         <h2 style="color:green;">{{ session('status') }}</h2>
     @endif
-    @if ($updateMode)
-        <h3>Edit Product</h3>
-    @else
-        <h3>Add Product</h3>
-    @endif
 
-    <form action="" wire:submit.prevent="{{ $updateMode ? 'update' : 'store' }}">
-        <label for="name">Name:</label>
-        <input type="text" wire:model="name">
-        @error('name') <span style="color: red;">{{ $message }}</span> @enderror
-        <br><br>
-        <label for="price">Price:</label>
-        <input type="text" wire:model="price">
-        @error('price')
-            <span style="color:red;" {{ $message }}></span>
-        @enderror
+    <div>
+        @if ($updateMode)
+            <h3>Edit Product</h3>
+        @else
+            <h3>Add Product</h3>
+        @endif
 
-        <br><br>
-        <label for="category">Category:</label>
-        <input type="text" wire:model="category">
-        @error('category')
-            <span style="color:red;" {{ $message }}></span>
-        @enderror
+        <form wire:submit.prevent="{{ $updateMode ? 'update' : 'store' }}">
+            <label for="name">Name:</label>
+            <input type="text" wire:model.defer="name">
+            @error('name') <span style="color: red;">{{ $message }}</span> @enderror
+            <br><br>
 
-        <br><br>
-        <button type="submit">{{ $updateMode ? 'Update' : 'Save' }}</button>
-        <button type="button" wire:click="resetInputFields">Cancel</button>
-    </form>
+            <label for="price">Price:</label>
+            <input type="text" wire:model.defer="price">
+            @error('price') <span style="color:red;">{{ $message }}</span> @enderror
+            <br><br>
 
+            <label for="category">Category:</label>
+            <input type="text" wire:model.defer="category">
+            @error('category') <span style="color:red;">{{ $message }}</span> @enderror
+            <br><br>
+
+            <button type="submit">{{ $updateMode ? 'Update' : 'Save' }}</button>
+            <button type="button" wire:click="resetInputFields">Cancel</button>
+        </form>
+    </div>
 
     <h3>All Products</h3>
     <table border="1">
@@ -59,5 +61,6 @@
             @endforeach
         </tbody>
     </table>
+
     {{ $products->links() }}
-</div>
+@endsection

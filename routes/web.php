@@ -6,6 +6,7 @@ use App\Livewire\CreatePost;
 use App\Livewire\ProductComponent;
 use App\Livewire\Profile;
 use App\Livewire\ProductSave;
+// use App\Http\Livewire\ProductComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +40,6 @@ Route::get('/add-product', ProductSave::class);
 
 // Route::view('/profile', 'profile');
 
-Route::get('/products', ProductComponent::class);
+
+// Route::get('/products', ProductComponent::class);
+Route::get('/products', ProductComponent::class)->name('products');
