@@ -36,7 +36,7 @@ Route::view('search', 'usersearch');
 Route::view('user', 'user');
 
 // Route::view('product', 'livewire.product-save');
-Route::get('/add-product', ProductSave::class);
+// Route::get('/add-product', ProductSave::class);
 
 // profile route
 
