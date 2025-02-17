@@ -7,6 +7,8 @@ use App\Livewire\ProductComponent;
 use App\Livewire\Profile;
 use App\Livewire\ProductSave;
 // use App\Http\Livewire\ProductComponent;
+use App\Livewire\CrudForm;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +44,10 @@ Route::get('/add-product', ProductSave::class);
 
 
 // Route::get('/products', ProductComponent::class);
-Route::get('/products', ProductComponent::class)->name('products');
+// Route::get('/products', ProductComponent::class)->name('products');
+
+// Route::get('/', CrudForm::class);
+
+Route::get('/products', function () {
+    return view('products');
+});

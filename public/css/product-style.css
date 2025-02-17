@@ -1,0 +1,86 @@
+/* Set the body background to white */
+body {
+    background-color: #ffffff; /* White background */
+    font-family: Arial, sans-serif;
+    color: #333; /* Default text color */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style the container to center the content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Heading styles */
+h1, h3 {
+    color: #2c3e50; /* Dark blue */
+}
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Light gray background for forms */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for form */
+}
+
+form input {
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+/* Hover effect on buttons */
+button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+/* Active button effect */
+button:active {
+    transform: scale(0.98); /* Button slightly shrinks when clicked */
+    background-color: #1c6ea4; /* Even darker blue */
+}
+
+/* Focus effect for better accessibility */
+button:focus {
+    outline: 3px solid #f39c12; /* Orange outline */
+    outline-offset: 2px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Confirmation button styles */
+button {
+    margin-right: 10px;
+}
