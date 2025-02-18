@@ -63,7 +63,7 @@
                         <td>
                             <button wire:click="edit({{ $product->id }})" class="btn btn-warning">Edit</button>
                             <button wire:click="delete({{ $product->id }})" class="btn btn-danger"
-                                onclick="return confirm('Are you sure?')">Delete</button>
+                                onclick="confirmDelete({{ $product->id }})">Delete</button>
                         </td>
                     </tr>
                 @endforeach
@@ -74,3 +74,21 @@
         {{ $products->links() }}
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.emit('delete', id);
+            }
+        });
+    }
+</script>

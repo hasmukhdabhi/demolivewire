@@ -75,10 +75,28 @@ class CrudForm extends Component
     }
 
     // Delete product
-    public function delete($id)
+    // public function delete($id)
+    // {
+    //     $product = Product::find($id);
+    //     if ($product) {
+    //         // $product->delete();
+    //         Product::find($id)->delete();
+    //         session()->flash('message', 'Product deleted successfully.');
+    //         // session()->flash('message', 'Product deleted successfully.');
+    //     } else {
+    //         session()->flash('message', 'Product not found.');
+    //     }
+    // }
+    protected $listeners = ['deleteConfirmed'];
+
+    public function deleteConfirmed($id)
     {
-        Product::find($id)->delete();
-        session()->flash('message', 'Product deleted successfully.');
+        $product = Product::find($id);
+
+        if ($product) {
+            $product->delete();
+            session()->flash('message', 'Product deleted successfully.');
+        }
     }
 
     // Reset input fields

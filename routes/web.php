@@ -51,3 +51,4 @@ Route::view('user', 'user');
 Route::get('/products', function () {
     return view('products');
 });
+// Route::get('/products', CrudForm::class);
