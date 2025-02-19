@@ -11,7 +11,7 @@ class CrudForm extends Component
 {
     use WithPagination;
 
-    public $name, $price, $category, $product_id;
+    public $name, $price, $category, $detail, $product_id;
     public $updateMode = false;
 
     // Render method
@@ -28,12 +28,14 @@ class CrudForm extends Component
             'name' => 'required',
             'price' => 'required|numeric',
             'category' => 'required',
+            'detail' => 'required',
         ]);
 
         Product::create([
             'name' => $this->name,
             'price' => $this->price,
             'category' => $this->category,
+            'detail' => $this->detail,
         ]);
 
         session()->flash('message', 'Product added successfully.');
@@ -49,6 +51,7 @@ class CrudForm extends Component
         $this->name = $product->name;
         $this->price = $product->price;
         $this->category = $product->category;
+        $this->detail = $product->detail;
     }
 
     // Update product
@@ -58,6 +61,7 @@ class CrudForm extends Component
             'name' => 'required',
             'price' => 'required|numeric',
             'category' => 'required',
+            'detail' => 'required',
         ]);
 
         if ($this->product_id) {
@@ -66,6 +70,7 @@ class CrudForm extends Component
                 'name' => $this->name,
                 'price' => $this->price,
                 'category' => $this->category,
+                'detail' => $this->detail,
             ]);
 
             $this->updateMode = false;
@@ -105,6 +110,7 @@ class CrudForm extends Component
         $this->name = '';
         $this->price = '';
         $this->category = '';
+        $this->detail = '';
         $this->updateMode = false;
     }
 
@@ -113,6 +119,7 @@ class CrudForm extends Component
     //     $this->name = '';
     //     $this->price = '';
     //     $this->category = '';
+    //     $this->detail = '';
     //     $this->updateMode = false;
     // }
 }

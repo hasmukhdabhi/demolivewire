@@ -36,7 +36,14 @@
                     <span class="error" style="color: red;">{{ $message }}</span>
                 @enderror
             </div>
-
+            <div class="form-group">
+                <label for="detail">Detail:</label>
+                <input type="text" wire:model="detail" id="detail" class="form-control"
+                    placeholder="Enter detail" />
+                @error('detail')
+                    <span class="error" style="color: red;">{{ $message }}</span>
+                @enderror
+            </div>
             <button type="submit" class="btn btn-primary">{{ $updateMode ? 'Update' : 'Save' }}</button>
             {{-- <button type="button" class="btn btn-secondary" wire:click="resetInputFields">Cancel</button> --}}
         </form>
@@ -51,6 +58,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th>Detail</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -60,6 +68,7 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->category }}</td>
+                        <td>{{ $product->detail }}</td>
                         <td>
                             <button wire:click="edit({{ $product->id }})" class="btn btn-warning">Edit</button>
                             <button wire:click="delete({{ $product->id }})" class="btn btn-danger"
