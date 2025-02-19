@@ -8,6 +8,8 @@ use App\Livewire\Profile;
 use App\Livewire\ProductSave;
 // use App\Http\Livewire\ProductComponent;
 use App\Livewire\CrudForm;
+use App\Http\Controllers\ProductController;
+
 
 
 /*
@@ -52,3 +54,13 @@ Route::get('/products', function () {
     return view('products');
 });
 // Route::get('/products', CrudForm::class);
+Route::resource('products', ProductController::class);
+// Route::resource('posts', ProductController::class);
+Route::get("posts", [ProductController::class, "index"])->name("posts.index");
+Route::get("posts/create", [ProductController::class, "create"])->name("posts.create");
+Route::post("posts", [ProductController::class, "store"])->name("posts.store");
+Route::get("posts/{post}", [ProductController::class, "show"])->name("posts.show");
+Route::get("posts/{post}/edit", [ProductController::class, "edit"])->name("posts.edit");
+Route::put("posts/{post}", [ProductController::class, "update"])->name("posts.update");
+Route::delete("posts/{post}", [ProductController::class, "destroy"])->name("posts.destroy");
+
