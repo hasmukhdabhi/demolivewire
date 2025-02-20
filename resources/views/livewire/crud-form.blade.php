@@ -7,6 +7,15 @@
             {{ session('message') }}
         </div>
     @endif
+    <div class="btn-container">
+        <h3 class="btn-getstarted">
+            <a class="btn-getstarted" href="{{ url('/login') }}">login</a>
+        </h3>
+        <h3 class="btn-getstarted">
+            <a class="btn-getstarted" href="{{ url('/register') }}">Register</a>
+        </h3>
+    </div>
+
     <!-- Product Form -->
     <div class="form-container">
         <form wire:submit.prevent="{{ $updateMode ? 'update' : 'store' }}">
