@@ -36,14 +36,8 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Web Page</a>
+                <a class="nav-link" href="{{ url('/home') }}">Home</a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ url('/login') }}">login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/register') }}">Register</a>
-            </li> --}}
             @if (Route::has('login'))
                 @auth
                     <li class="nav-item">
