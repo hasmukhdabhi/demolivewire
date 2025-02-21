@@ -40,16 +40,16 @@
             </li>
             @if (Route::has('login'))
                 @auth
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ url('/home') }}" class="nav-link">Home</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}" role="button">
                             @csrf
                             <a :href="route('logout')" class="nav-link"
                                 onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
                         </form>
-                        <a href="{{ url('/home') }}" class="nav-link">Home</a>
+                        {{-- <a href="{{ url('/home') }}" class="nav-link">Home</a> --}}
                     </li>
                 @else
                     <li class="nav-item">
